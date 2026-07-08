@@ -13,6 +13,7 @@
 **/tpcustomtest
 **/farm
 **/pipeline
+**/pipeline-test
 **/subprocess-test
 **/proxy
 **/proxy-test

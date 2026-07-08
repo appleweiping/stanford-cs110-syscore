@@ -1,0 +1,50 @@
+# CS110 assign3 — All Things Multiprocessing (captured 2026-07-08T22:08:51Z)
+# host: Linux 6.18.33.2-microsoft-standard-WSL2, g++ 13, 16 CPUs
+
+== subprocess-test ==
+sort said:
+ablution
+ephemeral
+felicity
+halcyon
+pettifogger
+pulchritude
+quixotic
+somnambulist
+susurrus
+umbrage
+PASS: output is correctly sorted
+== pipeline-test (sort | uniq -c) ==
+      2 apple
+      1 banana
+      3 pear
+== farm (factor 12 numbers across all CPUs) ==
+There are this many CPUs: 16, numbered 0 through 15.
+Worker 618 is set to run on CPU 0.
+Worker 619 is set to run on CPU 1.
+Worker 620 is set to run on CPU 2.
+Worker 621 is set to run on CPU 3.
+Worker 622 is set to run on CPU 4.
+Worker 623 is set to run on CPU 5.
+Worker 624 is set to run on CPU 6.
+Worker 625 is set to run on CPU 7.
+Worker 626 is set to run on CPU 8.
+Worker 627 is set to run on CPU 9.
+Worker 628 is set to run on CPU 10.
+Worker 629 is set to run on CPU 11.
+Worker 630 is set to run on CPU 12.
+Worker 631 is set to run on CPU 13.
+Worker 632 is set to run on CPU 14.
+Worker 633 is set to run on CPU 15.
+12 = 2 * 2 * 3
+97 = 97
+1000000007 = 1000000007
+360 = 2 * 2 * 2 * 3 * 3 * 5
+1024 = 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2
+17 = 17
+99991 = 99991
+123456 = 2 * 2 * 2 * 2 * 2 * 2 * 3 * 643
+2 = 2
+42 = 2 * 3 * 7
+7919 = 7919
+1048576 = 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2
