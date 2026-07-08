@@ -1,0 +1,25 @@
+# CS110 assign6 — ThreadPool (captured 2026-07-08T22:20:53Z)
+# host: Linux 6.18.33.2-microsoft-standard-WSL2, g++ 13, 16 CPUs
+
+===== ./tptest =====
+== ThreadPool tests ==
+  ok  1000 increments -> 1000 (expect 1000)
+  ok  reuse same pool -> 2000 (expect 2000)
+  ok  sum 1..100 = 5050 (expect 5050)
+  ok  16x100ms on 8 workers took 200ms (serial would be 1600ms)
+  ok  50 pools x20 tasks, dtor drains -> 1000 (expect 1000)
+
+== summary ==
+ALL PASS
+
+===== ThreadSanitizer (setarch -R, ASLR off) =====
+== ThreadPool tests ==
+  ok  1000 increments -> 1000 (expect 1000)
+  ok  reuse same pool -> 2000 (expect 2000)
+  ok  sum 1..100 = 5050 (expect 5050)
+  ok  16x100ms on 8 workers took 203ms (serial would be 1600ms)
+  ok  50 pools x20 tasks, dtor drains -> 1000 (expect 1000)
+
+== summary ==
+ALL PASS
+TSan exit: 0
