@@ -13,6 +13,7 @@
 
 #include <cstring>
 #include <cerrno>
+#include <fcntl.h>
 #include <sys/wait.h>
 
 // Symbolic names for the two ends of a pipe.
@@ -25,12 +26,19 @@ static void closeIfOpen(int fd) {
 
 subprocess_t subprocess(char *argv[], bool supplyChildInput, bool supplyChildOutput) {
   // supply == parent -> child stdin;  ingest == child stdout -> parent.
+  //
+  // The pipes are created O_CLOEXEC so that when this function is called
+  // concurrently from multiple threads, an unrelated child that fork()s while
+  // our pipes are open will *close* them on exec instead of holding a copy of a
+  // write end open (which would keep the reader from ever seeing EOF). The one
+  // child that legitimately wants these fds dup2()s them onto 0/1, and dup2
+  // clears O_CLOEXEC on the duplicate, so its stdin/stdout survive exec.
   int supplyPipe[2] = {-1, -1};
   int ingestPipe[2] = {-1, -1};
 
-  if (supplyChildInput && pipe(supplyPipe) == -1)
+  if (supplyChildInput && pipe2(supplyPipe, O_CLOEXEC) == -1)
     throw SubprocessException(std::string("pipe(supply) failed: ") + strerror(errno));
-  if (supplyChildOutput && pipe(ingestPipe) == -1)
+  if (supplyChildOutput && pipe2(ingestPipe, O_CLOEXEC) == -1)
     throw SubprocessException(std::string("pipe(ingest) failed: ") + strerror(errno));
 
   pid_t pid = fork();

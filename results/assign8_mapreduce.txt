@@ -1,0 +1,22 @@
+# CS110 assign8 — MapReduce (single-node) (captured 2026-07-08T23:49:41Z)
+# host: Linux 6.18.33.2-microsoft-standard-WSL2, g++ 13
+
+mapreduce: 8 input lines, M=4 mappers, R=3 reducers -> tests/out/part-0..2
+== merged output ==
+  alpha	16
+  beta	12
+  delta	4
+  gamma	16
+== checks ==
+  ok   alpha total = 16
+  ok   beta total = 12
+  ok   gamma total = 16
+  ok   delta total = 4
+  ok   4 distinct keys across all partitions
+  ok   no key split across partitions (shuffle correct)
+  ok   sum of counts = 48 tokens (no data lost)
+
+== summary ==
+7 passed, 0 failed
+
+(re-ran 5x consecutively: 5/5 PASS, no hangs after O_CLOEXEC fix for concurrent-fork fd inheritance)

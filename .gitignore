@@ -22,6 +22,10 @@ stsh/stsh
 **/mkamazondb
 **/dbase_test
 **/amazon_search
+mapreduce/mr
+mapreduce/mapper
+mapreduce/reducer
+mapreduce/tests/out/
 
 # Generated binary databases / keyword indexes
 *.db
