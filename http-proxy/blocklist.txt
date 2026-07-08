@@ -1,0 +1,5 @@
+# stproxy blocklist — one POSIX extended regex per line, matched against the
+# request's target host. Lines starting with '#' are comments.
+blocked\.test
+example\.evil
+ads?\.doubleclick\.net

@@ -1,0 +1,16 @@
+# CS110 assign7 — HTTP Web Proxy and Cache (captured 2026-07-08T22:49:28Z)
+# host: Linux 6.18.33.2-microsoft-standard-WSL2, g++ 13; curl 
+
+== stproxy end-to-end tests ==
+  ok   forward: GET returns origin content
+  ok   header: x-forwarded-for injected (127.0.0.1)
+  ok   cache: 2nd GET byte-identical (served from cache)
+  ok   cache: origin hit only once for /page (count reads 2)
+  ok   blocklist: blocked host returns 403
+  ok   concurrency: 25 parallel requests all served
+  ok   log: records a cache [HIT]
+  ok   log: records a [MISS] + cache TTL
+  ok   log: records a [BLOCK]
+
+== summary ==
+9 passed, 0 failed
