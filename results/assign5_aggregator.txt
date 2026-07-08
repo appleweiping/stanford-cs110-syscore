@@ -1,0 +1,22 @@
+# CS110 assign5 — RSS News Feed Aggregator (captured 2026-07-08T23:01:50Z)
+# host: Linux 6.18.33.2-microsoft-standard-WSL2, g++ 13, libxml2 2.9.14
+
+== stnewsaggregator end-to-end test ==
+  ok   dedup: 3 distinct articles from 2 feeds (a2 shared)
+  ok   query 'systems' matches all 3 articles
+  ok   ranking: 'Operating Systems Intro' top hit for systems
+  ok   count: script-block 'systems' excluded (count = 4, not 8)
+  ok   query 'threads' matches exactly 1 article
+  ok   query 'networking' matches exactly 1 article
+  ok   missing word reports no matches
+
+== origin access log (note: a2.html fetched once, though in both feeds) ==
+      1   GET /a1.html HTTP/1.0
+      1   GET /a2.html HTTP/1.0
+      1   GET /b1.html HTTP/1.0
+      1   GET /feedA.xml HTTP/1.0
+      1   GET /feedB.xml HTTP/1.0
+      1   GET /feeds.xml HTTP/1.0
+
+== summary ==
+7 passed, 0 failed

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>stnewsaggregator test feed list</title>
+    <item><title>Feed A</title><link>__BASE__/feedA.xml</link></item>
+    <item><title>Feed B</title><link>__BASE__/feedB.xml</link></item>
+  </channel>
+</rss>

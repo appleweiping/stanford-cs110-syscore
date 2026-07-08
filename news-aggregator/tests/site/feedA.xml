@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Feed A</title>
+    <item><title>Operating Systems Intro</title><link>__BASE__/a1.html</link></item>
+    <item><title>Threads and Concurrency</title><link>__BASE__/a2.html</link></item>
+  </channel>
+</rss>
