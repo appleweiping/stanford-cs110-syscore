@@ -1,0 +1,9 @@
+superblock: s_isize=4 s_fsize=35
+DIR   /                        (inode 1, 96 bytes)
+FILE  /hello.txt               (inode 2, 65 bytes, read 65, cksum 5975392118872516249)
+FILE  /README                  (inode 3, 104 bytes, read 104, cksum 1266271782179449128)
+FILE  /big.dat                 (inode 4, 10377 bytes, read 10377, cksum 14040362032760299004)
+DIR   /a                       (inode 8, 48 bytes)
+DIR   /a/b                     (inode 7, 48 bytes)
+DIR   /a/b/c                   (inode 6, 48 bytes)
+FILE  /a/b/c/deep.txt          (inode 5, 38 bytes, read 38, cksum 11993338372692146260)

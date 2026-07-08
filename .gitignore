@@ -1,0 +1,29 @@
+# Build artifacts
+*.o
+*.obj
+*.a
+*.exe
+*.out
+
+# Compiled test/tool binaries (rebuilt via make)
+**/mkfs_v6
+**/diskimageaccess
+**/runtests
+**/tptest
+**/tpcustomtest
+**/farm
+**/pipeline
+**/subprocess-test
+**/proxy
+**/proxy-test
+**/aggregate
+
+# Generated disk images / data
+*.img
+*.tmp
+
+# Editor / OS cruft
+.vscode/
+.idea/
+*.swp
+.DS_Store

@@ -1,0 +1,28 @@
+== inode layer ==
+  ok   inode_iget(root) succeeds
+  ok   root inode is allocated
+  ok   root inode is a directory
+== pathname layer ==
+  ok   lookup /hello.txt resolves
+  ok   lookup /README resolves
+  ok   lookup /a/b/c/deep.txt resolves (nested)
+  ok   lookup /a/b/c (dir) resolves
+  ok   lookup /nope fails as expected
+  ok   lookup missing nested path fails
+  ok   non-absolute path rejected
+  ok   lookup / is root
+== file content layer ==
+  ok   /hello.txt content matches
+== directory layer ==
+  ok   directory_findname finds hello.txt
+  ok   directory_findname returns -1 for missing name
+== large-file / indirect addressing ==
+  ok   lookup /big.dat resolves
+  ok   big.dat uses ILARG (indirect) addressing
+  ok   big.dat size is 20.x blocks
+  ok   big.dat fully read via indirect blocks
+  ok   big.dat byte pattern intact across indirect blocks
+  ok   file_getblock returns partial last-block size (137)
+
+== summary ==
+20 passed, 0 failed

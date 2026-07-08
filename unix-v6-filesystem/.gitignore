@@ -1,0 +1,5 @@
+*.o
+mkfs_v6
+diskimageaccess
+runtests
+*.img
