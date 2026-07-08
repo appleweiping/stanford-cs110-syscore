@@ -1,0 +1,28 @@
+# CS110 assign1 — Amazon Reviews Search (captured 2026-07-08T23:16:49Z)
+# host: Linux 6.18.33.2-microsoft-standard-WSL2, g++ 13; valgrind valgrind-3.22.0
+
+== building sample database ==
+built 10 reviews, 75 keywords
+== amazon reviews search tests ==
+  ok   dbase_test reports 10 reviews
+  ok   dbase_test: review #6 body via mmap+offset table
+  ok   single-word 'headphones' -> 3 reviews
+  ok   phrase '"works great"' -> 3 reviews (consecutive only)
+  ok   AND 'works great' -> 4 reviews (incl non-adjacent USB Cable)
+  ok   rare word -> exactly 1 review
+  ok   unknown word -> 0 reviews
+  ok   sort by stars, reversed, top hit is 5-star
+  ok   sort by stars, ascending, first hit is 4-star
+  ok   valgrind: no definite leaks / errors
+
+== summary ==
+10 passed, 0 failed
+
+=== sample dbase_test output (review #0) ===
+Review #0:
+  Title:    Sony Noise Cancelling Headphones
+  Category: Electronics
+  Rating:   5 star(s)
+  Headline: Best headphones ever
+  Date:     2020-6-15
+  Body:     These headphones works great and sound amazing

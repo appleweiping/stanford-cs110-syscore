@@ -19,6 +19,13 @@
 **/proxy-test
 **/aggregate
 stsh/stsh
+**/mkamazondb
+**/dbase_test
+**/amazon_search
+
+# Generated binary databases / keyword indexes
+*.db
+*.kwi
 
 # Python cache
 __pycache__/
