@@ -18,6 +18,11 @@
 **/proxy
 **/proxy-test
 **/aggregate
+stsh/stsh
+
+# Python cache
+__pycache__/
+*.pyc
 
 # Generated disk images / data
 *.img

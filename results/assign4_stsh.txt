@@ -1,0 +1,28 @@
+# CS110 assign4 — stsh (captured 2026-07-08T22:33:52Z)
+# host: Linux 6.18.33.2-microsoft-standard-WSL2, g++ 13
+
+===== functional tests (piped stdin) =====
+== stsh functional tests ==
+  ok   pipeline: echo | tr (uppercase)
+  ok   3-stage: sort<data | uniq -c | wc -l = distinct count
+  ok   input redirection: cat<data | wc -l
+  ok   output redirection: sort<data>file (first line)
+  ok   pipeline: echo | rev
+  ok   background: sleep 3 & shows in jobs as Running
+  ok   fg: brings bg job foreground, waits, reaps (no job left)
+  ok   parse error: leading pipe is rejected
+  ok   exec failure reported for unknown command
+
+== summary ==
+9 passed, 0 failed
+
+===== interactive job control (pseudo-terminal) =====
+  ok  Ctrl-Z stops fg job (reports Stopped)
+  ok  jobs lists the stopped job
+  ok  bg resumes job (jobs shows Running)
+  ok  slay %1 removes the job (jobs empty)
+  ok  shell survives Ctrl-C at idle prompt
+  ok  Ctrl-C kills fg job, prompt returns
+
+== summary ==
+6/6 passed
